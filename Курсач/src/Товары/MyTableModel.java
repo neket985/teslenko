@@ -2,74 +2,80 @@ package Товары;
 
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
+import java.awt.*;
 import java.util.LinkedList;
 
 public class MyTableModel implements TableModel {
     String[] columnNames = {"wight", "height", "color", "price", "name"};
     LinkedList<Product> furniture;
 
-    MyTableModel(LinkedList<Product> furniture){
+    MyTableModel(LinkedList<Product> furniture) {
         this.furniture = furniture;
     }
+
     public int getRowCount() {
         return furniture.size();
     }
+
     public int getColumnCount() {
-        return 7;
+        return 5;
     }
+
     public String getColumnName(int columnIndex) {
         return columnNames[columnIndex];
     }
+
     public Class<?> getColumnClass(int columnIndex) {
         switch (columnIndex) {
-            case 0:
-                return Integer.class;
-            case 5:
-                return Integer.class;
-            default:
+            case 2:
+                return Color.class;
+            case 4:
                 return String.class;
+            default:
+                return int.class;
         }
     }
+
     public boolean isCellEditable(int rowIndex, int columnIndex) {
-        if(columnIndex!=0){
             return true;
-        }
-        return false;
     }
+
     public Object getValueAt(int rowIndex, int columnIndex) {
         Product product = furniture.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return Product.wight;
+                return product.wight;
             case 1:
-                return Product.height;
+                return product.height;
             case 2:
-                return Product.color;
+                return product.color;
             case 3:
-                return Product.price;
+                return product.price;
             default:
-                return Product.name;
+                return product.name;
         }
     }
+
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
         Product product = furniture.get(rowIndex);
         switch (columnIndex) {
             case 1:
-                Product.wight = static int ();
+                product.wight = Integer.parseInt(aValue.toString());
                 break;
             case 2:
-                Product.height = static int();
+                product.height = Integer.parseInt(aValue.toString());
                 break;
             case 3:
-                Product.color =  static Color();
+                product.color = new Color(Integer.parseInt(aValue.toString()));
                 break;
             case 4:
-                Product.price =  static int();
+                product.price =Integer.parseInt(aValue.toString());
                 break;
             default:
-                Product.name = static String();
+                product.name = aValue.toString();
         }
     }
+
     public void addTableModelListener(TableModelListener l) {
     }
 

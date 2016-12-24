@@ -4,11 +4,11 @@ import java.awt.*;
 
 
 public class Product {
-    static int height;
-    static int wight;
-    static Color color;
-    static int price;
-    static String name;
+    int height;
+    int wight;
+    Color color;
+    int price;
+    String name;
 
     Product(int w, int h, Color c, int p, String n) {
         wight = w;
