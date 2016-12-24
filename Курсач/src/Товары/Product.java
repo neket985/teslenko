@@ -2,7 +2,6 @@ package Товары;
 
 import java.awt.*;
 
-
 public class Product {
     int height;
     int wight;

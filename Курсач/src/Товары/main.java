@@ -5,7 +5,6 @@ import javax.swing.table.TableModel;
 import java.awt.*;
 import java.util.LinkedList;
 
-
 public class main {
     public static void main(String[] args) throws InterruptedException {
         LinkedList<Product> furniture = new LinkedList<Product>();

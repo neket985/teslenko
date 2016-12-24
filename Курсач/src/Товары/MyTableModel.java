@@ -5,6 +5,7 @@ import javax.swing.table.TableModel;
 import java.awt.*;
 import java.util.LinkedList;
 
+
 public class MyTableModel implements TableModel {
     String[] columnNames = {"wight", "height", "color", "price", "name"};
     LinkedList<Product> furniture;
